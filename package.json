@@ -1,0 +1,36 @@
+{
+  "name": "learn-react",
+  "version": "1.0.0",
+  "description": "This is My Learning React/Practice Code of React by Mubashshir Majeed",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MubMaj/Learning-React.git"
+  },
+  "keywords": [
+    "react",
+    "learn",
+    "react",
+    "practice",
+    "react",
+    "bulding",
+    "react"
+  ],
+  "author": "Mubashshir Majeed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MubMaj/Learning-React/issues"
+  },
+  "homepage": "https://github.com/MubMaj/Learning-React#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
