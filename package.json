@@ -4,7 +4,11 @@
   "description": "This is My Learning React/Practice Code of React by Mubashshir Majeed",
   "main": "script.js",
   "scripts": {
-    "test": "jest"
+    "start": "parcel index.html",
+    "build": "build parcel index.html",
+    "test": "jest",
+    "ionic:build": "npm run build",
+    "ionic:serve": "npm run start"
   },
   "repository": {
     "type": "git",
