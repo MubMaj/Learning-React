@@ -23,8 +23,13 @@
   list-style: none;
 }
 
-.search{
+.filter{
   padding: 10px;
+}
+.filter-btn{
+  font-size: 1em;
+  cursor: pointer;
+  border: 2px solid blueviolet;
 }
 
 .res-card{
