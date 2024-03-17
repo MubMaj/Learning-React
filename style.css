@@ -1,50 +1,58 @@
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
   box-sizing: border-box;
 }
 
-.logo{
+.logo {
   max-width: 100%;
   height: auto;
-  width: 7.5vw;
+  width: 6.5vw;
 }
 
-.nav-items ul{
-  margin: 1.5rem;
+.nav-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-items ul {
+  margin: 0 3vw;
   display: flex;
   font-size: 20px;
+  justify-content: space-around;
+  gap: 2vw;
 }
 
-.nav-items ul li{
-  padding: 7px;
-  margin: 0px 14px;
+.nav-items ul li {
   list-style: none;
 }
 
-.filter{
+.filter {
   padding: 10px;
 }
-.filter-btn{
+.filter-btn {
   font-size: 1em;
   cursor: pointer;
   border: 2px solid blueviolet;
 }
 
-.res-card{
+.res-card {
   padding: 10px;
   width: 14vw;
   border: 1px solid black;
   background-color: #f0f0f0;
+  transition: transform 0.3s ease;
 }
 
-.res-card:hover{
+.res-card:hover {
+  transform: scale(0.97);
   box-shadow: 0px 0px 7px black;
   cursor: pointer;
 }
 
-.res-img{
+.res-img {
   width: 100%;
   height: 150px;
   max-height: 46%;
@@ -52,8 +60,38 @@
   border-radius: 20%;
 }
 
-.res-container{
+.res-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.shimmer-container {
+  margin-top: 43px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.shimmer-card {
+  background-color: #f0f0f0;
+  border: 1px solid #444444;
+  width: 14vw;
+  height: 400px;
+  padding: 10px;
+}
+
+.shimmer-img{
+  object-fit: cover;
+    border-radius: 20%;
+    width: 100%;
+    height: 150px;
+    max-height: 46%;
+    background-color: #c0c0c093;
+}
+
+.login{
+  font-size: 1rem;
+  background-color: #b0cdfa;
+  cursor: pointer;
 }
