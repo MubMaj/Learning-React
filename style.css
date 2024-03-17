@@ -30,12 +30,22 @@
 }
 
 .filter {
-  padding: 10px;
+  justify-content: space-between;
+  display: flex;
+  gap: 3vw;
+  padding: 1px;
+  margin: 4px;
 }
 .filter-btn {
+  margin: 0 4px;
   font-size: 1em;
   cursor: pointer;
   border: 2px solid blueviolet;
+}
+
+.filter-search{
+  padding: 4px 4px 4px 0;
+  margin-right: 1vw;
 }
 
 .res-card {
