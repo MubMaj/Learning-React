@@ -2,8 +2,7 @@ import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 
 const HeaderComponent = () => {
-
-  
+  // local State Variable
   const [btnName, setbtnName] = useState("Log IN");
 
   return (

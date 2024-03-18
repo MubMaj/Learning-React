@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import ShimmerComponent from "./Shimmer";
+import { API_URL, API_D_URL } from "../utils/constants";
 
 const BodyComponent = () => {
   const [listOfResturants2, setlistOfResturants2] = useState([]);
@@ -12,19 +13,18 @@ const BodyComponent = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.4300572&lng=81.7869042&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(API_D_URL);
 
     let json = await data.json();
 
-    setlistOfResturants2(
+        setlistOfResturants2(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setfilteredList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
 
   const handleSearch = () => {
     const searchTextString = typeof searchText === "string" ? searchText : "";
