@@ -105,3 +105,8 @@
   background-color: #b0cdfa;
   cursor: pointer;
 }
+
+.header ul li a{
+  text-decoration: none;
+  color: #000;
+}
