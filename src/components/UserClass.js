@@ -25,8 +25,7 @@ class UserClass extends React.Component {
     });
   }
 
-  componentDidUpdate(){
-  }
+  componentDidUpdate() {}
 
   render() {
     const { name, location, avatar_url, html_url, blog } = this.state.userInfo;
@@ -35,8 +34,15 @@ class UserClass extends React.Component {
       <div className="userCard">
         <h2>{name}</h2>
         <h3>Loaction: {location}</h3>
-        <a href={html_url} target="_blank"><img src={avatar_url}></img></a>
-        <h4>Contact: <a href={blog} target="_blank">Mub.io</a></h4>
+        <a href={html_url} target="_blank">
+          <img src={avatar_url}></img>
+        </a>
+        <h4>
+          Contact:{" "}
+          <a href={blog} target="_blank">
+            Mub.io
+          </a>
+        </h4>
         <h6>Its a Class Based Component</h6>
       </div>
     );

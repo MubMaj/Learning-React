@@ -3,43 +3,34 @@ import { useEffect, useState } from "react";
 import ShimmerComponent from "./Shimmer";
 import { API_URL, API_D_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useResturantList from "../utils/useResturantList";
 
 const BodyComponent = () => {
-  const [listOfResturants2, setlistOfResturants2] = useState([]);
+  const listOfResturants = useResturantList(API_D_URL);
   const [filteredList, setfilteredList] = useState([]);
   const [searchText, setsearchText] = useState([]);
 
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const data = await fetch(API_D_URL);
-
-    let json = await data.json();
-
-    setlistOfResturants2(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setfilteredList(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-  };
+    if (listOfResturants.length > 0) {
+      setfilteredList(listOfResturants);
+    }
+  }, [listOfResturants]);
 
   const handleSearch = () => {
     const searchTextString = typeof searchText === "string" ? searchText : "";
-    const filterlist = listOfResturants2.filter((res) =>
+    const newfilterlist = listOfResturants.filter((res) =>
       res.info.name.toLowerCase().includes(searchTextString.toLowerCase())
     );
-    setfilteredList(filterlist);
+    setfilteredList(newfilterlist);
   };
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSearch();
     }
   };
 
-  return listOfResturants2.length === 0 ? (
+  return listOfResturants.length === 0 ? (
     <ShimmerComponent />
   ) : (
     <div>
@@ -49,7 +40,6 @@ const BodyComponent = () => {
             <input
               type="text"
               className="filter-search"
-              value={searchText}
               onChange={(e) => setsearchText(e.target.value)}
               onKeyDown={handleKeyPress}
             ></input>
@@ -61,7 +51,7 @@ const BodyComponent = () => {
             <button
               className="filter-btn"
               onClick={() => {
-                let filteredlist = listOfResturants2.filter(
+                let filteredlist = listOfResturants.filter(
                   (res) => res.info.avgRatingString > 4
                 );
                 setfilteredList(filteredlist);
@@ -72,7 +62,7 @@ const BodyComponent = () => {
             <button
               className="filter-btn"
               onClick={() => {
-                let filteredlist = listOfResturants2;
+                let filteredlist = listOfResturants;
                 setfilteredList(filteredlist);
               }}
             >
