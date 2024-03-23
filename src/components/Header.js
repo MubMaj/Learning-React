@@ -17,7 +17,7 @@ const HeaderComponent = () => {
           <li><Link to='/contact'>Contact Us</Link></li>
           <li>Cart</li>
           <button
-            className="login"
+            className="login "
             onClick={() => {
               btnName === "Log IN"
                 ? setbtnName("Log OUT")
