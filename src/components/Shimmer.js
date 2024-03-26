@@ -1,6 +1,6 @@
 const ShimmerComponent = () => {
   return (
-    <div className="shimmer-container ">
+    <div className="res-container my-10">
       <div className="shimmer-card"><div className="shimmer-img"></div></div>
       <div className="shimmer-card"><div className="shimmer-img"></div></div>
       <div className="shimmer-card"><div className="shimmer-img"></div></div>

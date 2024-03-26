@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext"
 
 const HeaderComponent = () => {
   // local State Variable
   const [btnName, setbtnName] = useState("Log IN");
+
+  const {loggedInUser} = useContext(UserContext);
+
 
   return (
     <header className="header">
@@ -15,9 +19,9 @@ const HeaderComponent = () => {
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About Us</Link></li>
           <li><Link to='/contact'>Contact Us</Link></li>
-          <li>Cart</li>
+          <li>{loggedInUser}</li>
           <button
-            className="login "
+            className="login filter-btn text-sm"
             onClick={() => {
               btnName === "Log IN"
                 ? setbtnName("Log OUT")

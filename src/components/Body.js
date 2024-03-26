@@ -11,7 +11,7 @@ const BodyComponent = () => {
   const [searchText, setsearchText] = useState([]);
 
   useEffect(() => {
-    if (listOfResturants.length > 0) {
+    if (!listOfResturants || listOfResturants.length > 0) {
       setfilteredList(listOfResturants);
     }
   }, [listOfResturants]);
@@ -30,7 +30,7 @@ const BodyComponent = () => {
     }
   };
 
-  return listOfResturants.length === 0 ? (
+  return !listOfResturants || listOfResturants.length === 0 ? (
     <ShimmerComponent />
   ) : (
     <div>
@@ -39,7 +39,7 @@ const BodyComponent = () => {
           <div className="search-box">
             <input
               type="text"
-              className="filter-search"
+              className="filter-search border border-black"
               onChange={(e) => setsearchText(e.target.value)}
               onKeyDown={handleKeyPress}
             ></input>
@@ -70,17 +70,21 @@ const BodyComponent = () => {
             </button>
           </div>
         </div>
-        <div className="res-container">
-          {filteredList.map((restu) => (
-            <Link
-              className="res-link"
-              key={restu.info.id}
-              to={"/restaurants/" + restu.info.id}
-            >
-              {" "}
-              <RestaurantCard resData={restu} />
-            </Link>
-          ))}
+        <div className="font-bold mx-56 px-2 py-4 text-xl">
+          Total {filteredList.length} Restaurant
+        </div>
+        <div className="items-center flex mx-44">
+          <div className="flex flex-wrap justify-between">
+            {filteredList.map((restu) => (
+              <Link
+                className="res-link"
+                key={restu.info.id}
+                to={"/restaurants/" + restu.info.id}
+              >
+                <RestaurantCard resData={restu} />
+              </Link>
+            ))}
+          </div>
         </div>
       </main>
     </div>
