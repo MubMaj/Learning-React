@@ -1,6 +1,15 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 
-function Itemlist({ items }) {
+const Itemlist = ({ items }) => {
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+  };
+
   return (
     <div className="bg-gray-100 rounded-xl">
       {items.map((item) => (
@@ -12,7 +21,8 @@ function Itemlist({ items }) {
             <div className="p-2">
               <span className="font-semibold">{item.card.info.name}</span>
               <span>
-                - ₹{item?.card?.info?.price
+                - ₹
+                {item?.card?.info?.price
                   ? item?.card?.info?.price / 100
                   : item?.card?.info?.defaultPrice / 100}
               </span>
@@ -23,7 +33,10 @@ function Itemlist({ items }) {
           </div>
           <div className="w-3/12 p-4">
             <div className="absolute">
-              <button className="p-1 bg-black text-white shadow-black shadow-md rounded-sm m-auto mx-1    ">
+              <button
+                onClick={() => handleAddItem(item)}
+                className="p-1 bg-black text-white shadow-black shadow-md rounded-sm m-auto mx-1    "
+              >
                 Add +
               </button>
             </div>
@@ -33,6 +46,6 @@ function Itemlist({ items }) {
       ))}
     </div>
   );
-}
+};
 
 export default Itemlist;

@@ -1,12 +1,17 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const HeaderComponent = () => {
   // local State Variable
   const [btnName, setbtnName] = useState("Log IN");
 
   const { loggedInUser } = useContext(UserContext);
+
+  const cartItems = useSelector((store) => store.cart.items);
+
+  console.log(cartItems);
 
   return (
     <header className="header">
@@ -52,7 +57,9 @@ const HeaderComponent = () => {
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="text-black">Cart</li>
+          <li className="text-black font-bold">
+          <Link to="/cart">Cart - ({cartItems.length} Items)</Link>
+          </li>
           <button
             className="login filter-btn text-sm"
             onClick={() => {
