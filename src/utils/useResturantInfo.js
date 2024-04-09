@@ -9,7 +9,7 @@ const useResturantInfo = (Res_API_URL, resID) => {
       }, []);
     
       const fetchMenu = async () => {
-        const apiData = await fetch('https://proxy.cors.sh/'+Res_API_URL + resID);
+        const apiData = await fetch(Res_API_URL + resID);
         const json = await apiData.json();
         setResInfo(json.data);
       };

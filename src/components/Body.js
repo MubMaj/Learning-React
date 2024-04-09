@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import useResturantList from "../utils/useResturantList";
 
 const BodyComponent = () => {
-  const listOfResturants = useResturantList('https://proxy.cors.sh/'+API_D_URL);
+  const listOfResturants = useResturantList(API_D_URL);
   const [filteredList, setfilteredList] = useState([]);
   const [searchText, setsearchText] = useState([]);
 
