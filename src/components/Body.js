@@ -1,12 +1,12 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import ShimmerComponent from "./Shimmer";
-import { API_URL, API_D_URL } from "../utils/constants";
+import {API_D_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useResturantList from "../utils/useResturantList";
 
 const BodyComponent = () => {
-  const listOfResturants = useResturantList(API_D_URL);
+  const listOfResturants = useResturantList('https://proxy.cors.sh/'+API_D_URL);
   const [filteredList, setfilteredList] = useState([]);
   const [searchText, setsearchText] = useState([]);
 
@@ -29,6 +29,9 @@ const BodyComponent = () => {
       handleSearch();
     }
   };
+
+  
+
 
   return !listOfResturants || listOfResturants.length === 0 ? (
     <ShimmerComponent />

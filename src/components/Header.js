@@ -5,18 +5,16 @@ import { useSelector } from "react-redux";
 
 const HeaderComponent = () => {
   // local State Variable
-  const [btnName, setbtnName] = useState("Log IN");
+  const [btnName, setbtnName] = useState("Login");
 
   const { loggedInUser } = useContext(UserContext);
 
   const cartItems = useSelector((store) => store.cart.items);
 
-  console.log(cartItems);
-
   return (
     <header className="header">
-      <div className="logo-container">
-        <Link to={"/"}>
+      <div className="logo-container mx-9">
+        <Link to={"/"} className="flex gap-2 items-baseline">
           <svg
             className="logo"
             viewBox="0 0 559 825"
@@ -44,6 +42,7 @@ const HeaderComponent = () => {
               </linearGradient>
             </defs>
           </svg>
+          <span>Clone by Mub.io</span>
         </Link>
       </div>
       <div className="nav-items">
@@ -58,19 +57,23 @@ const HeaderComponent = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li className="text-black font-bold">
-          <Link to="/cart">Cart - ({cartItems.length} Items)</Link>
+            <Link to="/cart">Cart - ({cartItems.length} Items)</Link>
           </li>
           <button
             className="login filter-btn text-sm"
             onClick={() => {
-              btnName === "Log IN"
-                ? setbtnName("Log OUT")
-                : setbtnName("Log IN");
+              btnName === "Login"
+                ? setbtnName("Logout")
+                : setbtnName("Login");
             }}
           >
             {btnName}
           </button>
-          <li>{loggedInUser}</li>
+          <li>
+            <a href="https://mub-io.netlify.app/" target="_blank">
+              Mub.IO
+            </a>
+          </li>
         </ul>
       </div>
     </header>

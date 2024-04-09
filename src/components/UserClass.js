@@ -30,19 +30,19 @@ class UserClass extends React.Component {
     const { name, location, avatar_url, html_url, blog } = this.state.userInfo;
 
     return (
-      <div className="userCard">
-        <h2>{name}</h2>
-        <h3>Loaction: {location}</h3>
-        <a href={html_url} target="_blank">
-          <img src={avatar_url}></img>
-        </a>
-        <h4>
-          Contact:{" "}
-          <a href={blog} target="_blank">
+      <div className="border border-black flex flex-col items-center w-6/12">
+        <h2 className="font-bold text-lg">{name}</h2>
+        <h3 className="font-bold text-sm">Loaction: {location}</h3>
+        <h4 className="font-bold text-sm">
+          Contact -
+          <a className=" text-blue-500 underline" href={blog} target="_blank">
             Mub.io
           </a>
         </h4>
-        <h6>Its a Class Based Component</h6>
+        <a className="w-8/12" href={html_url} target="_blank">
+          <img src={avatar_url}></img>
+        </a>
+        <p className="text-blue-950 underline">Note: This is a Class Based Component just for learning</p>
       </div>
     );
   }
