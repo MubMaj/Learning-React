@@ -2,7 +2,6 @@
   "name": "learn-react",
   "version": "1.0.0",
   "description": "This is My Learning React/Practice Code of React by Mubashshir Majeed",
-  "main": "script.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -44,7 +43,7 @@
     "parcel": "^2.12.0",
     "postcss": "^8.4.38",
     "process": "^0.11.10",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.3"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.2",
