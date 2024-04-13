@@ -5,7 +5,7 @@ export const LOGO_URL =
   "https://png.pngtree.com/template/20191014/ourmid/pngtree-pin-food-delivery-map-location-delivery-logo-concept-image_318151.jpg";
 
 export const API_D_URL =
-  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.4300572&lng=81.7869042";
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.4300572&lng=81.7869042";
 
 export const Res_API_URL =
   "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=25.4272113&lng=81.805925&restaurantId=";
