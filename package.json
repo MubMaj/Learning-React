@@ -5,10 +5,8 @@
   "main": "script.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "build parcel index.html",
-    "test": "jest",
-    "ionic:build": "npm run build",
-    "ionic:serve": "npm run start"
+    "build": "parcel build index.html",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,7 +19,12 @@
     "practice",
     "react",
     "bulding",
-    "react"
+    "react",
+    "swiggy",
+    "clone",
+    "cravee",
+    "cravy",
+    "cravie"
   ],
   "author": "Mubashshir Majeed",
   "license": "ISC",
